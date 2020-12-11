@@ -10,11 +10,18 @@
 
 (function() {
     'use strict';
+    var i = 0;
     var intervalID = setInterval(function(){
-        let closeButton = document.querySelector('.Modal-closeButton');
+        let closeButton = getCloseButton();
         if (closeButton != null) {
             closeButton.click();
-            clearInterval(intervalID);
+            if (getCloseButton() == null) {
+                clearInterval(intervalID);
+            }
         }
     }, 1000);
 })();
+
+function getCloseButton() {
+    return document.querySelector('.Modal-closeButton');
+}
