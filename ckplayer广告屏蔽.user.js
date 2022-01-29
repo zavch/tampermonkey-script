@@ -12,7 +12,7 @@
 (function() {
     'use strict';
     if (window.ckplayer) {
-      window.ckplayer.advertisementsPlay = function(){}
+      window.ckplayer.prototype.advertisementsPlay = function(){}
     }
     // Your code here...
 })();
