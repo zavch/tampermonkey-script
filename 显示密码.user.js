@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         显示密码
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      2024-05-24
 // @description  try to take over the world!
 // @author       You
 // @match        http://*/*
@@ -12,7 +12,15 @@
 
 (function() {
     'use strict';
-    document.querySelectorAll("input[type='password']")
-      .forEach(e => e.addEventListener("change", function(event) {e.title = event.target.value}))
-    // Your code here...
+    let handleElements = []
+    let id = setInterval(() => {
+        let passwordInputs = document.querySelectorAll("input[type=password]");
+        passwordInputs.forEach(e => {
+            if (handleElements.indexOf(e) != -1) {
+                return;
+            }
+            e.addEventListener("change", event => event.target.title = event.target.value);
+            handleElements.push(e);
+        });
+    }, 500)
 })();
