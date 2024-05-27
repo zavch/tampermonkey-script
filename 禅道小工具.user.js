@@ -13,7 +13,10 @@
     'use strict';
     if (location.href.endsWith("-0.html")) {
         // 主干自动跳转到所有
-        location.href = location.href.replace(/-0.html$/, "-all.html")
+        location.href = location.href.replace(/-0.html$/, "-all.html") 
+    } else if (/bug-browse-[0-9]+.html/.test(location.href)) {
+        // 默认页面跳转到所有
+        location.href = location.href.replace(/-([0-9]+).html$/, "-$1-all.html")
     } else if (location.href.endsWith("qa.html")) {
         // 更正错误的链接
         let id = setInterval(() => {
