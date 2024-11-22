@@ -4,7 +4,7 @@
 // @version      2024-10-17
 // @description  try to take over the world!
 // @author       You
-// @match        https://cn.bing.com/spotlight*
+// @match        https://*.bing.com/spotlight*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
